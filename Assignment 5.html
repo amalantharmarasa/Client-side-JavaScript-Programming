@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Project 5</title>
+</head>
+<body>
+<h1>Project #5</h1>
+<h1>This program will change mertic to standard.</h1>
+
+<strong>Insert Number for cm: </strong>
+
+<input type = "text" name = "deci" id = "deci" size = "15" maxlength = "15" />
+
+<input type="button" value="Submit" onclick="dec2standard()" />
+
+<br><br>
+
+<div id = "result"></div>
+<script type = "text/javascript"> 
+function dec2standard() {
+
+var x = document.getElementById("deci").value;
+
+if ((/[^0-9]/g.test(x)) || x == "") {
+
+alert ("You must enter an integer decimal number!");
+
+document.getElementById("deci").value = "";
+
+document.getElementById("deci").focus();
+
+return false;
+
+}
+	x = parseInt(x);
+
+	var inch = x/2.54;
+
+	var feet = x/30.84;
+
+	var figs = "inches: " + inch + "<br>";
+
+	var figs = figs +"feet: " + feet + "<br>";
+
+
+document.getElementById("result").innerHTML = figs;
+
+}
+
+</script>
+</body>
+

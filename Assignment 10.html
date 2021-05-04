@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project 10</title>
+<script>
+    //Image caching 
+    var img1 = new Image(); //Creat
+    img1.src = "man1.jpg";
+    var img2 = new Image();
+    img2.src = "man2.jpg";
+    var img3 = new Image();
+    img3.src = "man3.jpg";
+    var img4 = new Image();
+    img4.src = "man4.jpg";
+    var img5 = new Image();
+    img5.src = "man5.jpg";
+    var img6 = new Image();
+    img6.src = "man6.jpg";
+    
+    var i = 1; //Image counter
+    
+    setInterval(function() {
+        switch(i) {
+            case 1: document.getElementById('pic').setAttribute('src',img1.src);
+            i++; 
+            break;
+            
+            case 2: document.getElementById('pic').setAttribute('src',img2.src);
+            i++; 
+            break;
+            
+            case 3: document.getElementById('pic').setAttribute('src',img3.src);
+            i++; 
+            break;
+            
+            case 4: document.getElementById('pic').setAttribute('src',img4.src);
+            i++; 
+            break;
+            
+            case 5: document.getElementById('pic').setAttribute('src',img5.src);
+            i++; 
+            break;
+            
+            case 6: document.getElementById('pic').setAttribute('src',img6.src);
+            i=1;
+            break;
+        }
+    },500);
+    
+    
+    
+</script>
+</head>
+<body>
+    <div>
+        <img id="pic" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Project 4</title>
+</head>
+ 
+<body>
+<h1>This program will convert decimal to binary, hexadecimal and octal.</h1>
+<b>Insert Decimal Number: </b><input type = "text" name = "deci" id = "deci" size = "15" maxlength = "15" />
+<input type="button" value="Convert!" onclick="dec2bin()" />
+<br><br>
+<div id = "result"></div>
+ 
+<script type = "text/javascript"> 
+ 
+function dec2bin() 
+	{
+		var x = document.getElementById("deci").value;
+		if ((/[^0-9]/g.test(x)) || x == "")
+		{
+			alert ("You must enter an integer decimal number!");
+			document.getElementById("deci").value = "";
+			document.getElementById("deci").focus();
+			return false;
+		}
+	
+			x = parseInt(x);
+			var bin1 = x.toString(2);
+			var bin2 = x.toString(16);
+ 			var bin3 = x.toString(8);
+ 
+			var figs1 = "The binary representation of " + x + " is " + bin1 + "<br>";
+			var figs2 = "The hexadecimal representation of " + x + " is " + bin2 + "<br>";
+			var figs3 = "The octal representation of " + x + " is " + bin3 + "<br>";
+		
+ 		document.getElementById("result").innerHTML = figs1 + figs2 + figs3;
+		
+		//document.writeln("<p> " + figs1 + figs2 + figs3 +" .</p>");
+  }
+</script>
+ 
+</body>
+ 
+</html>
