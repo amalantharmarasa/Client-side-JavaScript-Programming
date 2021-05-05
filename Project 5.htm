@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<body>
+<h1>This program will check to see if a number is entered.</h1>
+<form name="checknum" onSubmit="return checkban()">
+Please enter your age:<br>
+<input type="text" name="pnum">
+<input type="submit" value="Submit">
+</form>
+
+<script language="JavaScript1.2">
+
+
+function checknumber(){
+var x=document.checknum.pnum.value
+var anum=/(^\d+$)|(^\d+\.\d+$)/
+if (anum.test(x))
+      { alert("Valid number entered!")
+    testresult=true }
+
+
+else{
+alert("Please input a valid number!")
+testresult=false
+}
+return (testresult)
+}
+
+</script>
+<script>
+function checkban(){
+if (document.layers||document.all||document.getElementById)
+return checknumber()
+else
+return true
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project </title>
+<script type="text/javascript">
+
+var curSignal = 1;
+var begin;
+Signal1 = new Image();
+Signal1.src = "green.gif";
+Signal2 = new Image();
+Signal2.src = "yellow.gif";
+Signal3 = new Image();
+Signal3.src = "red.gif";
+
+function light_on() {
+        	if (curSignal == 1) {
+                document.images[0].src = Signal2.src;
+                curSignal = 2;   }
+
+		   else if (curSignal == 2) {
+                document.images[0].src = Signal3.src;
+                curSignal = 3;   }
+
+	      else if (curSignal == 3) {
+                document.images[0].src = Signal1.src;
+                curSignal = 1;   }
+
+
+}
+function startLight() {
+        if (begin)
+                clearInterval(begin);
+        begin = setInterval("light_on ()",1000);
+}
+
+</script>
+</head>
+<body>
+<form action="">
+<p><input type="button" value=" light_on  "
+onclick="startLight();" /><input type="button" name="off"
+value=" off" onclick="clearInterval(begin);" /></p></form>
+<p><img src="green.gif" height="183" width="150" alt="Image of a Signal." /></p>
+</body>
+
+
+</html>

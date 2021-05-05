@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+    <script>
+        function checkEmail()
+
+		{
+         var string = document.forms[0].emailInput.value;
+
+         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+			if(re.test(string)==false)
+				{
+                alert("Please input a valid number!");
+            	}
+
+            else
+				{
+                alert("The email is valid");
+            	}
+        }
+
+    </script>
+</head>
+
+<body>
+ <h1>This program will check valid email.</h1>
+<form name="checkEmailForm">
+        Please enter your email address:<br>
+<input type="text" name="emailInput">
+<input type="submit" value="Submit" onclick="checkEmail()">
+</form>
+
+</body>
+
+</html>

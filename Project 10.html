@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project </title>
+<script type="text/javascript">
+
+var curPennant = 1;
+var begin;
+run1 = new Image();
+run1.src = "runner0.jpg";
+run2 = new Image();
+run2.src = "runner1.jpg";
+run3 = new Image();
+run3.src = "runner2.jpg";
+run4 = new Image();
+run4.src = "runner3.jpg";
+run5 = new Image();
+run5.src = "runner4.jpg";
+run6 = new Image();
+run6.src = "runner5.jpg";
+function Run() {
+        	if (curPennant == 1) {
+                document.images[0].src = run2.src;
+                curPennant = 2;   }
+
+		   else if (curPennant == 2) {
+                document.images[0].src = run3.src;
+                curPennant = 3;   }
+
+	      else if (curPennant == 3) {
+                document.images[0].src = run4.src;
+                curPennant = 4;   }
+
+	      else if (curPennant == 4) {
+                document.images[0].src = run5.src;
+                curPennant = 5;   }
+
+          else if (curPennant == 5) {
+                document.images[0].src = run6.src;
+                curPennant = 1;   }
+}
+function startRun() {
+        if (begin)
+                clearInterval(begin);
+        begin = setInterval("Run()",100);
+}
+
+</script>
+</head>
+<body>
+<form action="">
+<p><input type="button" value=" Run"
+onclick="startRun();" /><input type="button" name="Stop"
+value=" Stop" onclick="clearInterval(begin);" /></p></form>
+<p><img src="runner0.jpg" height="183" width="150" alt="Image of a run." /></p>
+</body>
+</html>
